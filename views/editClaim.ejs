@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <!-- Identifying the main CSS file -->
+    <link rel='stylesheet' href='/Content/app.css' />
+    <!-- Identifying the Bootstrap CSS file -->
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
+    <!-- Identifying Font Awesome CSS file -->
+    <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
+    <style>
+      .center-text {
+        display: block;
+        text-align: center;
+        margin-top: 20px; /* This gives some spacing after the list */
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Brand name updated to 'Coding Insurance' -->
+      <a class="navbar-brand" href="/">Coding Insurance</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Updated Navigation links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/claims">Claims</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> <!-- End of the navigation bar -->
+  <div class="container mt-4">
+      <h2>Edit Claim</h2>
+      <form action="/claims/update/<%= claim._id %>" method="post">
+        <div class="mb-3">
+          <label for="claimNumber" class="form-label">Claim Number:</label>
+          <input type="text" class="form-control" id="claimNumber" name="claimNumber" value="<%= claim.number %>" required>
+        </div>
+        <!-- Repeat for other fields with existing values -->
+        <button type="submit" class="btn btn-primary">Update Claim</button>
+      </form>
+  </div>
+  <div class="socials" style="text-align: center; margin-top: 20px;">
+      <a href="https://www.linkedin.com/in/matthew-allicock-9026b0233/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/MatthewA15/3Assignment.git" target="_blank">GitHub</a>
+  </div>
+</body>
+</html>
