@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Coding Insurance - Home</title>
+    <title><%= title %> - Coding Insurance</title>
     <!-- Identifying the main CSS file -->
     <link rel='stylesheet' href='/Content/app.css' />
     <!-- Identifying the Bootstrap CSS file -->
     <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.min.css' />
     <!-- Identifying Font Awesome CSS file -->
     <link rel='stylesheet' href='/@fortawesome/fontawesome-free/css/all.min.css' />
+    <style>
+      .center-text {
+        display: block;
+        text-align: center;
+        margin-top: 20px; /* This gives some spacing after the list */
+      }
+    </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,13 +47,72 @@
     </div>
   </nav> <!-- End of the navigation bar -->
   <div class="container mt-4">
-    <h1 class="text-center">Welcome to Coding Insurance</h1>
-    <p class="center-text">Your trusted partner in coding and software insurance solutions.</p>
-    <!-- Add additional content here as needed -->
+    <h1 class="text-center"><%= title %></h1>
+    <% if (title ==== 'Home') { %>
+      <div id="home">
+        <div class="centered-div">
+          <!-- Welcome message home page -->
+          <h1>Welcome to Coding Insurance</h1><br>
+          <p>Your trusted partner in coding and software insurance solutions.</p>
+
+    <% } %>
+    <% if (title === 'About Us') { %>
+      <div class="centered-div">
+        <!-- Content for the About Us page -->
+        <p>This is the About Us page. You can provide information about your company here.</p>
+      </div>
+    <% } %>
+
+    <% if (title === 'Services') { %>
+      <div class="centered-div">
+        <!-- Content for the Services page -->
+        <p>This is the Services page. You can list your services here.</p>
+      </div>
+    <% } %>
+
+    <% if (title ==== 'Contact Us') { %>
+      <div class="centered-div">
+        <p>Questions, Comments and Queries Below!</p><br><br>
+      </div>
+      <div class="centered-div">
+        <!-- Description for the Contact Me page -->
+        <p>This is the Contact page. You can provide your contact information here.</p>
+      </div>
+      <div id="left-coloum" style="margin: auto; width: 50%;" class="center-flexbox" class="center-grid" class="centered-div">
+        <!-- Contact form -->
+        <form 
+        action="mailto:matthew.allicock@ontariotechu.net"
+        enctype="text/plain"
+        method="post"
+        name="form"
+        >
+        <!-- Input email -->
+        <p>
+            <label id="email">Email :</label><br>
+            <input type="email" name="email" size="30" placeholder="Enter Email Here" required>
+        </p>
+        <!--  Input comments area -->
+        <p>
+            <label id="comments">Comments :</label><br>
+            <textarea name="comment" cols="60" rows="8"></textarea>
+        </p>
+        <!-- Input name -->
+        <p>
+            <label id="name">Name :</label><br>
+            <input type="text" name="name" size="40" placeholder="Enter Name Here" required>
+        </p>
+  
+        <!-- Submit button -->
+        <p>
+            <input type="submit" value="Click here to submit the form">
+        </p>
+        </form>
+      </div>
+    <% } %>
   </div>
-  <div class="socials" style="text-align: center; margin-top: 20px;">
-      <a href="https://www.linkedin.com/in/matthew-allicock-9026b0233/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/MatthewA15/3Assignment.git" target="_blank">GitHub</a>
+  <div class="socials" style="text-align: center;">
+    <a href="https://www.linkedin.com/in/matthew-allicock-9026b0233/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/MatthewA15/3Assignment.git" target="_blank">GitHub</a>
   </div>
 </body>
 </html>

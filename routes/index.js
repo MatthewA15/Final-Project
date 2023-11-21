@@ -4,25 +4,25 @@ const Claim = require('../models/CodingInsurance'); // Assuming CodingInsurance 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home Page', heading: 'Welcome to Coding Insurance' });
+  res.render('index', { title: 'Home' });
 });
 
 /* GET About page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Us', heading: 'About Coding Insurance' });
+  res.render('about', { title: 'About Us' });
 });
 
 /* GET Services page. */
 router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services', heading: 'Insurance Services' });
+  res.render('services', { title: 'Services' });
 });
 
 /* GET Contact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Us', heading: 'Contact Coding Insurance' });
+  res.render('contact', { title: 'Contact Us' });
 });
 
-// Example route for adding a new claim
+
 router.post('/add-claim', async (req, res) => {
   try {
     const newClaim = new Claim({
